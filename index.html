@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quantity Measurement Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="logo">
+    ⚡ Quantity Measurement
+  </div>
+
+  <div class="user-menu">
+
+    <div class="user-info" onclick="toggleDropdown()">
+      <img id="userAvatar" class="avatar" />
+      <span id="userName"></span>
+    </div>
+
+    <div id="dropdown" class="dropdown hidden">
+      <p id="userEmail"></p>
+      <hr />
+      <button onclick="logout()">Logout</button>
+    </div>
+
+  </div>
+
+</header>
+
+<main class="grid">
+
+  <!-- FORM -->
+  <section class="card">
+    <form id="form">
+
+      <select id="category"></select>
+
+      <div class="row">
+        <input type="number" id="value1" required />
+        <select id="unit1"></select>
+      </div>
+
+      <div class="row">
+        <input type="number" id="value2" required />
+        <select id="unit2"></select>
+      </div>
+
+      <div class="buttons">
+        <button data-op="add">Add</button>
+        <button data-op="subtract">Subtract</button>
+        <button data-op="compare">Compare</button>
+        <button data-op="divide">Divide</button>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- RESULT -->
+  <section class="card">
+    <h2>Result</h2>
+    <div id="result"></div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="card">
+    <h2>History</h2>
+    <div id="history"></div>
+  </section>
+
+</main>
+
+<script src="api.js"></script>
+<script src="ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

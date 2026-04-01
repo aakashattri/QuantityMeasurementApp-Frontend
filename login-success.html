@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Logging you in...</h2>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("token");
+
+  console.log("TOKEN:", token);
+
+  if (token) {
+    localStorage.setItem("token", token);
+    window.location.href = "index.html";
+  } else {
+    document.body.innerHTML = "Login failed";
+  }
+</script>
+
+</body>
+</html>
